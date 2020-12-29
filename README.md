@@ -5,7 +5,7 @@
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
 | email              | string              | null: false             |
-| password           | string              | null: false             |
+| encrypted_password | string              | null: false             |
 | nickname           | string              | null: false             |
 | family_name        | string              | null: false             |
 | first_name         | string              | null: false             |
@@ -18,7 +18,6 @@
 
 * has_many :products dependent: :destroy
 * belongs_to :destination dependent: :destroy
-* belongs_to :card dependent: :destroy
 
 ## destination table
 
@@ -30,7 +29,7 @@
 | city                             | string     | null: false                    |
 | address                          | string     | null: false                    |
 | building_name                    | string     |                                |
-| phone_number                     | string     |                                |
+| phone_number                     | string     | null: false                    |
 
 
 ### Association
@@ -43,11 +42,11 @@
 |------------------|------------|--------------------------------|
 | name             | string     | null: false                    |
 | price            | integer    | null: false                    |
-| description      | string     | null: false                    |
+| description      | text       | null: false                    |
 | status_id        | integer    | null: false                    |
-| size_id          | integer    | null: false                    |
+| burden_id        | integer    | null: false                    |
 | category_id	     | integer	  | null: false, foreign_key: true |
-| brand_id         | integer	  | null: false, foreign_key: true |
+| consignor_id     | integer	  | null: false, foreign_key: true |
 | shipping_id      | integer	  | null: false, foreign_key: true |
 | user_id	         | integer    | null: false, foreign_key: true |
 
@@ -66,5 +65,4 @@
 ### Association
 
 - has_many :products
-
 
