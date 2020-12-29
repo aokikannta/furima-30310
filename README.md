@@ -19,6 +19,7 @@
 
 * has_many :products dependent: :destroy
 * belongs_to :destination dependent: :destroy
+* belongs_to :management
 
 ## destination table
 
@@ -30,6 +31,9 @@
 | address                          | string     | null: false                    |
 | building_name                    | string     |                                |
 | phone_number                     | string     | null: false                    |
+| management_id                    | integer    | null: false, foreign_key: true |
+
+
 
 
 ### Association
@@ -44,16 +48,14 @@
 | price            | integer    | null: false                    |
 | description      | text       | null: false                    |
 | status_id        | integer    | null: false                    |
-| burden_id        | integer    | null: false                    |
-| category_id	     | integer	  | null: false                    |
-| consignor_id     | integer	  | null: false                    |
-| shipping_id      | integer	  | null: false                    |
+| prefecture_id    | integer    | null: false                    |
 | user_id	         | integer    | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user dependent: :destroy
+- belongs_to :management
 
 ## address table
 
@@ -77,6 +79,7 @@
 
 - belongs_to :user 
 - belongs_to :product
+- belongs_to :destination
 
 
 
