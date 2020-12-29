@@ -1,3 +1,4 @@
+# README
 # DB 設計
 
 ## users table
@@ -45,9 +46,9 @@
 | description      | text       | null: false                    |
 | status_id        | integer    | null: false                    |
 | burden_id        | integer    | null: false                    |
-| category_id	     | integer	  | null: false, foreign_key: true |
-| consignor_id     | integer	  | null: false, foreign_key: true |
-| shipping_id      | integer	  | null: false, foreign_key: true |
+| category_id	     | integer	  | null: false                    |
+| consignor_id     | integer	  | null: false                    |
+| shipping_id      | integer	  | null: false                    |
 | user_id	         | integer    | null: false, foreign_key: true |
 
 
@@ -55,14 +56,12 @@
 
 - belongs_to :user dependent: :destroy
 
-## brand table
+## address table
 
-| Column      | Type       | Options              |
-|-------------|------------|----------------------|
-| name        | string     | index: true          |
+| Column           | Type       | Options                        |
+|------------------|------------|--------------------------------|
 
 
 ### Association
 
-- has_many :products
-
+- belongs_to :user 
