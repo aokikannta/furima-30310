@@ -18,7 +18,7 @@
 ### Association
 
 * has_many :products dependent: :destroy
-* belongs_to :management
+* has_many :managements
 
 ## destination table
 
@@ -38,6 +38,7 @@
 ### Association
 
 - belongs_to :product
+- belongs_to :management
 
 ## product table
 
@@ -48,16 +49,16 @@
 | description      | text       | null: false                    |
 | status_id        | integer    | null: false                    |
 | prefecture_id    | integer    | null: false                    |
-| area             | integer    | null: false                    |
-| state            | integer    | null: false                    |
-| days             | integer    | null: false                    |
+| area_id          | integer    | null: false                    |
+| state_id         | integer    | null: false                    |
+| days_id          | integer    | null: false                    |
 | user_id	         | integer    | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user dependent: :destroy
-- belongs_to :management
+- has_one :management
 
 ## address table
 
@@ -80,8 +81,8 @@
 ### Association
 
 - belongs_to :user 
-- belongs_to :product
-- belongs_to :destination
+- belongs_to :product_id
+- has_one :destination
 
 
 
