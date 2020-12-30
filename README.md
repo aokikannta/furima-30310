@@ -18,7 +18,6 @@
 ### Association
 
 * has_many :products dependent: :destroy
-* belongs_to :destination dependent: :destroy
 * belongs_to :management
 
 ## destination table
@@ -49,6 +48,9 @@
 | description      | text       | null: false                    |
 | status_id        | integer    | null: false                    |
 | prefecture_id    | integer    | null: false                    |
+| area             | integer    | null: false                    |
+| state            | integer    | null: false                    |
+| days             | integer    | null: false                    |
 | user_id	         | integer    | null: false, foreign_key: true |
 
 
