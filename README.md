@@ -37,7 +37,6 @@
 
 ### Association
 
-- belongs_to :product
 - belongs_to :management
 
 ## product table
@@ -57,7 +56,7 @@
 
 ### Association
 
-- belongs_to :user dependent: :destroy
+- belongs_to :user 
 - has_one :management
 
 ## address table
