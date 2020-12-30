@@ -59,16 +59,6 @@
 - belongs_to :user 
 - has_one :management
 
-## address table
-
-| Column           | Type       | Options                        |
-|------------------|------------|--------------------------------|
-
-
-### Association
-
-- belongs_to :user 
-
 ## management table
 
 | Column           | Type       | Options                        |
